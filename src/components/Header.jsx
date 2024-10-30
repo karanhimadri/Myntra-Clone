@@ -1,10 +1,39 @@
 import { BsFillPersonFill } from "react-icons/bs";
 import { FaFaceGrinHearts, FaBagShopping } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { searchItems } from "../store/searchingImple.js";
+import { RxCross1 } from "react-icons/rx";
+import "./Header.css";
 
-const Header = () => {
+const Header = ({ setA }) => {
   const bag = useSelector((store) => store.bag_store);
+  const navigate = useNavigate();
+
+  const [crossBtn, setCrossBtn] = useState(true);
+  const [searchItem, setSearchItem] = useState("");
+  const handleOnKeyDown = (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+
+      const itemIDs = searchItems(searchItem);
+      setA(itemIDs);
+      navigate(`/search_item/search_name=${searchItem}`);
+    }
+  };
+
+  const handleCrossBtnShowing = () => {
+    if (searchItem.length !== 0) {
+      setCrossBtn(false);
+    } else {
+      setCrossBtn(true);
+    }
+  };
+
+  useEffect(() => {
+    handleCrossBtnShowing();
+  }, [searchItem]);
 
   return (
     <header>
@@ -12,7 +41,7 @@ const Header = () => {
         <Link to="/">
           <img
             className="myntra_home"
-            src="images/myntra_logo.webp"
+            src="images/myntra_logo.png"
             alt="Myntra Home"
           />
         </Link>
@@ -28,16 +57,57 @@ const Header = () => {
         </a>
       </nav>
       <div className="search_bar">
-        <span className="material-symbols-outlined search_icon">search</span>
+        <div className="search_icon">
+          <img src="/images/search.png" alt="" />
+        </div>
         <input
           className="search_input"
           placeholder="Search for products, brands and more"
+          value={searchItem}
+          onChange={(e) => setSearchItem(e.target.value)}
+          onKeyDown={handleOnKeyDown}
         />
+        <button
+          onClick={() => setSearchItem("")}
+          className={`remove-btn ${crossBtn ? "display-btn" : ""}`}
+        >
+          <RxCross1 />
+        </button>
       </div>
       <div className="action_bar">
         <div className="action_container">
           <BsFillPersonFill />
           <span className="action_name">Profile</span>
+          <div className="profile-dropdown">
+            <ul
+              class="dropdown-menu position-static d-grid gap-1 p-2 rounded-3 mx-0 shadow w-220px  "
+              data-bs-theme="light"
+            >
+              <li>
+                <a class="dropdown-item rounded-2 active" href="#">
+                  Your Order
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item rounded-2" href="#">
+                  Your Cart
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item rounded-2" href="#">
+                  Coupons
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <a class="dropdown-item rounded-2" href="#">
+                  Log Out
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div className="action_container">

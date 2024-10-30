@@ -27,11 +27,11 @@ function BagItem({ item }) {
           <div className="return-period">
             <span className="return-period-days">
               {item.return_period} days
-            </span>{" "}
+            </span>
             return available
           </div>
           <div className="delivery-details">
-            Delivery by
+            Delivery by{" "}
             <span className="delivery-details-days">{item.delivery_date}</span>
           </div>
         </div>

@@ -1,11 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const products = [
+export const products = [
   {
     id: "001",
-    image: "images/1.jpg",
+    image: "https://m.media-amazon.com/images/I/81Zee0f1HNL._SL1500_.jpg",
     company: "Carlton London",
-    item_name: "Rhodium-Plated CZ Floral Studs",
+    item_name:
+      "Roseate Mosaic Super Soft Bath Mat Super Absorbent Anti-Skid Door Mats for Home/Bathroom Mat/Bedroom/Kitchen/Floor Mat",
     original_price: 1045,
     current_price: 606,
     discount_percentage: 42,
@@ -15,9 +16,10 @@ const products = [
   },
   {
     id: "002",
-    image: "images/2.jpg",
-    company: "CUKOO",
-    item_name: "Women Padded Halter Neck Swimming Dress",
+    image:
+      "https://m.media-amazon.com/images/I/81lUuQcAcML._AC_UL480_FMwebp_QL65_.jpg",
+    company: "Amazon",
+    item_name: "Solimo Polyester Spandex Dining Chair Slipcover ",
     original_price: 2599,
     current_price: 1507,
     discount_percentage: 42,
@@ -27,9 +29,10 @@ const products = [
   },
   {
     id: "003",
-    image: "images/3.jpg",
-    company: "NUEVOSDAMAS",
-    item_name: "Women Red & White Printed A-Line Knee-Length Skirts",
+    image: "https://m.media-amazon.com/images/I/71ddRfhOCIL._SL1500_.jpg",
+    company: "Crompton",
+    item_name:
+      "Crompton Ozone Desert Air Cooler- 75L; with Everlast Pump, Auto Fill, 4-Way Air Deflection and High Density Honeycomb Pads; White & Teal",
     original_price: 1599,
     current_price: 495,
     discount_percentage: 69,
@@ -39,9 +42,10 @@ const products = [
   },
   {
     id: "004",
-    image: "images/4.jpg",
-    company: "ADIDAS",
-    item_name: "Indian Cricket ODI Jersey",
+    image: "https://m.media-amazon.com/images/I/71QfUcEOg8L._SL1500_.jpg",
+    company: "Amazon Basics",
+    item_name:
+      "amazon basics High Speed 55 Watt Oscillating Pedestal Fan, 400Mm Sweep Length, White (without Remote)",
     original_price: 999,
     current_price: 999,
     discount_percentage: 0,
@@ -51,9 +55,10 @@ const products = [
   },
   {
     id: "005",
-    image: "images/5.jpg",
-    company: "Roadster",
-    item_name: "Pure Cotton T-shirt",
+    image: "https://m.media-amazon.com/images/I/71vJLCZBeoL._SL1500_.jpg",
+    company: "AGARO",
+    item_name:
+      "AGARO Marvel 9L Oven Toaster Griller, Cake Baking, Grilling, Toasting, OTG, 800 Watts, (Black)",
     original_price: 1399,
     current_price: 489,
     discount_percentage: 65,
@@ -63,9 +68,10 @@ const products = [
   },
   {
     id: "006",
-    image: "images/6.jpg",
-    company: "Nike",
-    item_name: "Men ReactX Running Shoes",
+    image: "https://m.media-amazon.com/images/I/51-pLhPHoBL._SY741_.jpg",
+    company: "CB-COLEBROOK",
+    item_name:
+      "CB-COLEBROOK Men's Casual Button Down Shirts Long Sleeve Linen Shirt Fashion Textured Beach Summer Shirt",
     original_price: 14995,
     current_price: 14995,
     discount_percentage: 0,
@@ -75,9 +81,10 @@ const products = [
   },
   {
     id: "007",
-    image: "images/7.jpg",
-    company: "The Indian Garage Co",
-    item_name: "Men Slim Fit Regular Shorts",
+    image: "https://m.media-amazon.com/images/I/61ybeKQto8L._SY879_.jpg",
+    company: "Casio",
+    item_name:
+      "Casio Vintage A158WA-1DF Black Digital Dial Silver Stainless Steel Band D011",
     original_price: 1599,
     current_price: 639,
     discount_percentage: 60,
@@ -85,9 +92,10 @@ const products = [
   },
   {
     id: "008",
-    image: "images/8.jpg",
-    company: "Nivea",
-    item_name: "Men Fresh Deodrant 150ml",
+    image: "https://m.media-amazon.com/images/I/71mX4WATh-L._SX679_.jpg",
+    company: "GoSriKi",
+    item_name:
+      "GoSriKi Women's Rayon Blend Anarkali Printed Kurta with Palazzo & Dupatta",
     original_price: 285,
     current_price: 142,
     discount_percentage: 50,
@@ -97,7 +105,8 @@ const products = [
   },
   {
     id: "009",
-    image: "https://m.media-amazon.com/images/I/61XtYoH-kGL._AC_UY327_FMwebp_QL65_.jpg",
+    image:
+      "https://m.media-amazon.com/images/I/61XtYoH-kGL._AC_UY327_FMwebp_QL65_.jpg",
     company: "ZEBRONICS",
     item_name: "ZEBRONICS ZEB-JAGUAR Wireless Mouse",
     original_price: 1190,
@@ -109,7 +118,8 @@ const products = [
   },
   {
     id: "010",
-    image: "https://m.media-amazon.com/images/I/61kvIiso70L._AC_UL480_FMwebp_QL65_.jpg",
+    image:
+      "https://m.media-amazon.com/images/I/61kvIiso70L._AC_UL480_FMwebp_QL65_.jpg",
     company: "ZEBRONICS",
     item_name: "ZEBRONICS Marine Wireless Mouse",
     original_price: 1699,
@@ -169,7 +179,8 @@ const products = [
   },
   {
     id: "015",
-    image: "https://images-eu.ssl-images-amazon.com/images/I/61erXkfqw7L._AC_UL165_SR165,165_.jpg",
+    image:
+      "https://images-eu.ssl-images-amazon.com/images/I/61erXkfqw7L._AC_UL165_SR165,165_.jpg",
     company: "ZEBRONICS",
     item_name: "ZEBRONICS 2.4GHz Wireless Keyboard & Mouse Combo",
     original_price: 1899,

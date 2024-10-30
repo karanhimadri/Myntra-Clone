@@ -15,7 +15,7 @@ function BagSummary() {
     totalDiscount += element.current_price;
   });
 
-  let finalPayment = totalMRP - totalDiscount + 99;
+  let finalPayment = totalDiscount + 99;
 
   return (
     <div className="bag-summary">
@@ -33,12 +33,16 @@ function BagSummary() {
         </div>
         <div className="price-item">
           <span className="price-item-tag">Convenience Fee</span>
-          <span className="price-item-value">₹99</span>
+          <span className="price-item-value">
+            {totalMRP === 0 ? "0" : "₹99"}
+          </span>
         </div>
         <hr />
         <div className="price-footer">
           <span className="price-item-tag">Total Amount</span>
-          <span className="price-item-value">₹{finalPayment}</span>
+          <span className="price-item-value">
+            ₹{totalMRP === 0 ? 0 : finalPayment}
+          </span>
         </div>
       </div>
       <button className="btn-place-order">

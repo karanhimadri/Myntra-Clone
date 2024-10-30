@@ -1,0 +1,16 @@
+.action_bar .action_container {
+  position: relative;
+}
+
+.action_container .profile-dropdown {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  display: none;
+}
+.action_container .action_name {
+  cursor: pointer;
+}
+.action_bar .action_container:hover .profile-dropdown {
+  display: block;
+}
