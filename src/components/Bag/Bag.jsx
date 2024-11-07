@@ -3,6 +3,8 @@ import BagItem from "./BagItem";
 import BagSummary from "./BagSummary";
 import "./AllBag.css";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import LocalTime from "../../myStore/TimeCalculate";
 
 function Bag() {
   const item = useSelector((store) => store.item_store);
@@ -10,6 +12,12 @@ function Bag() {
 
   let finallBagitems = item.filter((item) => bagItemsIds.includes(item.id));
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // const token = localStorage.getItem("token");
+    // console.log(token);
+    LocalTime();
+  }, []);
 
   return (
     <main>

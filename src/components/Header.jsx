@@ -31,6 +31,10 @@ const Header = ({ setA }) => {
     }
   };
 
+  const clearLocalStorage = () => {
+    localStorage.removeItem("token");
+  };
+
   useEffect(() => {
     handleCrossBtnShowing();
   }, [searchItem]);
@@ -80,29 +84,29 @@ const Header = ({ setA }) => {
           <span className="action_name">Profile</span>
           <div className="profile-dropdown">
             <ul
-              class="dropdown-menu position-static d-grid gap-1 p-2 rounded-3 mx-0 shadow w-220px  "
+              className="dropdown-menu position-static d-grid gap-1 p-2 rounded-3 mx-0 shadow w-220px  "
               data-bs-theme="light"
             >
               <li>
-                <a class="dropdown-item rounded-2 active" href="#">
+                <a className="dropdown-item rounded-2 active" href="#">
                   Your Order
                 </a>
               </li>
               <li>
-                <a class="dropdown-item rounded-2" href="#">
+                <a className="dropdown-item rounded-2" href="#">
                   Your Cart
                 </a>
               </li>
               <li>
-                <a class="dropdown-item rounded-2" href="#">
+                <a className="dropdown-item rounded-2" href="#">
                   Coupons
                 </a>
               </li>
               <li>
-                <hr class="dropdown-divider" />
+                <hr className="dropdown-divider" />
               </li>
               <li>
-                <a class="dropdown-item rounded-2" href="#">
+                <a onClick={clearLocalStorage} className="dropdown-item rounded-2" href="#">
                   Log Out
                 </a>
               </li>
